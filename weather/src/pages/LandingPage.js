@@ -1,13 +1,12 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import TopNavigation from "./Navigations/Header/View/TopNavigation";
-import { Auth0Provider } from "@auth0/auth0-react";
 import LoginButton from "../components/LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 export default function LandingPage() {
-  const { user, isAuthenticated } = useAuth0();
+  const {isAuthenticated } = useAuth0();
   const matches = useMediaQuery("(min-width:650px)");
   let navigate = useNavigate();
 
@@ -51,7 +50,7 @@ export default function LandingPage() {
       )}
       {!matches && (
         <Container>
-          <Typography sx={{ textAlign: "left", justifyItems: "left" }}>
+          <Typography sx={{ textAlign: "left", justifyItems: "left", marginTop: 15  }}>
             Welcome to the weather forecast web application. Please Login with
             your Github user to use the application and view the weather in your
             city.

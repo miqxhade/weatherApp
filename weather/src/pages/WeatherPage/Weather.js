@@ -42,7 +42,6 @@ export const Weather = () => {
       // Handle the response from backend here
       .then((res) => {
         // set the params needed for table
-        console.log(res.data);
         setMain(res.data.weather[0].main);
         setDescription(res.data.weather[0].description);
         setTemp(res.data.main.temp);
@@ -63,7 +62,7 @@ export const Weather = () => {
       <TopNavigation />
       {/*table can be used for array data but for this purpose we use set data */}
       {matches && (
-        <div style={{ padding: 50, padding: 200, padding: 200 }}>
+        <div style={{ padding: 50 }}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
@@ -107,7 +106,7 @@ export const Weather = () => {
         </div>
       )}
       {!matches && (
-        <div style={{ padding: 40, padding: 10, padding: 10 }}>
+        <div style={{ padding: 40}}>
           <TableContainer com ponent={Paper}>
             <Table sx={{ minWidth: 300 }} aria-label="simple table">
               <TableHead>
